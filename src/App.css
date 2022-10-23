@@ -1,4 +1,4 @@
-.App {
+/*.App {
   text-align: center;
 }
 
@@ -35,4 +35,79 @@
   to {
     transform: rotate(360deg);
   }
+}*/
+
+
+/* universal section */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+
+#root {
+  width: 100%;
+}
+
+/* header section */
+
+.header {
+  background-color: gray;
+  text-align: center;
+  
+}
+
+.header h1 {
+  padding: 25px 0;
+  font-size: 3rem;
+  
+}
+
+.yearDropdown {
+  width: 75px;
+}
+
+.ul-header {
+  display: flex;
+  justify-content:space-between;
+  padding: 10px 10px;
+  font-size: 1.25rem;
+  margin: 0;
+  
+}
+
+.ul-header li {
+  padding: 0 10px;
+  list-style-type: none;
+  
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Category Section */
+
+.categoryContainer {
+  text-align: center;
+  padding: 35px;  
+}
+
+.categoryLabel {
+  font-size: 1.5rem;
+}
+
+.categoryDrop {
+  font-size: 1.25rem;
 }
