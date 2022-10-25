@@ -1,13 +1,13 @@
 import React from "react";
 
 
-function Category() {
+function CategoryDrop() {
 
 
     return (
         <div className="categoryContainer">
             <label className="categoryLabel">Category:</label>
-            <select className="categoryDrop">
+            <select className="categoryDrop" id="categoryDropdown">
                 <option className="categorySelect">Income</option>
                 <option className="categorySelect">Tips</option>
                 <option className="categorySelect">Expenses</option>
@@ -21,4 +21,4 @@ function Category() {
     )
 }
 
-export default Category;
+export default CategoryDrop;

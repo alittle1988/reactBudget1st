@@ -101,13 +101,39 @@ html {
 
 .categoryContainer {
   text-align: center;
-  padding: 35px;  
+  padding: 35px;
 }
 
 .categoryLabel {
   font-size: 1.5rem;
+  padding: 0 15px;
 }
 
 .categoryDrop {
   font-size: 1.25rem;
+}
+
+/* Category Input section */
+
+.inputContainer {
+  padding-left: 25px;
+}
+
+.inputSec {
+  padding: 10px 0;
+}
+
+.inputLabel{
+  padding-right:  10px;
+}
+
+.submitButton {
+  border-radius: 15px;
+  width: 75px;
+
+}
+.submitButton:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
 }

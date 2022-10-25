@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./Header.js";
-import Category from "./Category.js"
+import CategoryDrop from "./CategoryDrop.js";
+import CategorysInput from "./CategorysInput.js";
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Category />
+      <CategoryDrop />
+      <CategorysInput />
       
     </div>
   );
