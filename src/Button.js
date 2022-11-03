@@ -3,10 +3,16 @@ import React from "react";
 
 
 function Button(props) {
+
+    function handleSubmitClick() {
+        alert("Fuck yeah")
+        
+    };
+
     let {className, children, ...rest} = props
     const classes = clsx("submitButton", className)
     return (
-        <button className={classes} {...rest}>{children}</button>
+        <button onClick={handleSubmitClick} className={classes} {...rest}>{children}</button>
     )
 }
 

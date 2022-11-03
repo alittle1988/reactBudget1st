@@ -1,11 +1,15 @@
 import React from "react";
 
+function handleYearChange() {
+    alert("super duper gang");
+}
+
 
 function Header() {
     return (
         <div className="header">
             <h1>Budget</h1>
-            <select className="yearDropdown">
+            <select onChange={handleYearChange} className="yearDropdown">
                 <option className="year">2022</option>
                 <option className="year">2023</option>
                 <option className="year">2024</option>

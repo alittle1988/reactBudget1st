@@ -123,6 +123,10 @@ html {
   padding: 10px 0;
 }
 
+.inputSec input:focus {
+  outline: 1px solid red;
+}
+
 .inputLabel{
   padding-right:  10px;
 }
@@ -136,4 +140,35 @@ html {
   cursor: pointer;
   background-color: blue;
   color: white;
+}
+
+/* Table Section*/
+
+.tableDiv {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+
+}
+
+.tableDiv table {
+  border-bottom: 1px solid black;
+  width: 250px;
+}
+
+.tableDiv th {
+  text-align: center;
+  width: 50%;
+  background-color: gray;
+  height: 35px;
+
+
+}
+
+.tableDiv td {
+  text-align: center;
+  width: 50%;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
