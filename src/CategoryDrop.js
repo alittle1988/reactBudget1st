@@ -1,43 +1,42 @@
-import React, { createElement } from "react";
+import React from "react";
 import CategorysInput from "./CategorysInput";
 
+const Categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
 
 function CategoryDrop() {
-
-    function handleCategoryChange() {
-        const dropDown = document.querySelector('#categoryDropdown');
-        let selectedItem = dropDown.options[dropDown.selectedIndex].value;
-        const input = document.querySelector("#input");
-        
-        alert(selectedItem)
-        if(selectedItem === 'expenses'){
-           return <CategorysInput></CategorysInput>
-            
-        }
-        
-    };
-
-
-    return (<>
+    
+        let element = 
         <div className="categoryContainer">
             <label className="categoryLabel">Category:</label>
             <select onChange={handleCategoryChange} className="categoryDrop" id="categoryDropdown">
-                <option value=""  disable selected>Please Select</option>
-                <option value="income" className="categorySelect">Income</option>
-                <option value="tips" className="categorySelect">Tips</option>
-                <option value="expenses" className="categorySelect">Expenses</option>
-                <option value="myself" className="categorySelect">Myself</option>
-                <option value="eating-out" className="categorySelect">Eating Out</option>
-                <option value="misc" className="categorySelect">Misc</option>
-                <option value="gas" className="categorySelect">Gas</option>
-                <option value="groceries" className="categorySelect">Groceries</option>
-            </select>
-        </div>
-        <div className="inputSection" id="input">
+            <option value=""  disabled selected>Please Select</option>
+            { Categorys.map(category => <option value={category.toLocaleLowerCase()} className="categorySelect">{category}</option>)}
+        </select>
+     </div>;
 
-        </div>
         
-    </>)
-}
+        
+            function handleCategoryChange() {
+                const dropDown = document.querySelector('#categoryDropdown');
+                let selectedItem = dropDown.options[dropDown.selectedIndex].value;
+                if(selectedItem === 'expenses'){
+                    
+                }
+       
+        
+                alert(selectedItem)
+                return selectedItem;
+                
+            }
+        
+        
+
+
+    return element;
+
+    
+    
+
+};
 
 export default CategoryDrop;

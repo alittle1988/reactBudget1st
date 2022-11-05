@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "./Button.js";
+import CategoryDrop from "./CategoryDrop.js";
 
 
-function CategorysInput(props) {
+function CategorysInput() {
     
     let element = 
     <div className="inputContainer">

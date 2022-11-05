@@ -8,11 +8,12 @@ import IncomeTable from "./IncomeTable.js"
 
 
 function App() {
+  
   return (
     <div className="App">
       <Header />
       <CategoryDrop />
-      <CategorysInput />
+     
       <div className='tableDiv'>
         <ExpenseTable></ExpenseTable>
         <IncomeTable></IncomeTable>
@@ -20,6 +21,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

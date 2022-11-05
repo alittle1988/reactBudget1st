@@ -17,7 +17,7 @@ function TipInput() {
                 </div>
             </form>
                                                                                                                                                                                           
-            <Button clasName="submitButton">Submit</Button>
+            <Button>Submit</Button>
         </div>                                                                                                
                                                                
     </>)
