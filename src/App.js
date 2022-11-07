@@ -1,15 +1,14 @@
+import { useState } from 'react';
 import './App.css';
 import Header from "./Header.js";
 import CategoryDrop from "./CategoryDrop.js";
 import CategorysInput from "./CategorysInput.js";
-import ExpenseTable from "./ExpenseTable.js";
-import TipsTable from './TipsTable.js';
-import IncomeTable from "./IncomeTable.js"
-import CategoryDropInput from './CategoryDropInput';
+import Tables from "./Tables.js";
 
 
 
 function App() {
+  const {income, setIncome} = useState()
   
   return (
     <div className="App">
@@ -17,9 +16,14 @@ function App() {
       <CategoryDrop></CategoryDrop>
      
       <div className='tableDiv'>
-        <ExpenseTable></ExpenseTable>
-        <IncomeTable></IncomeTable>
-        <TipsTable></TipsTable>
+        <Tables title="Income" />
+        <Tables title="Tips"  />
+        <Tables title="Expenses"  />
+        <Tables title="Myself" />
+        <Tables title="Eating out" />
+        <Tables title="Misc" />
+        <Tables title="Gas" />
+        <Tables title="Groceries" />
       </div>
     </div>
   );

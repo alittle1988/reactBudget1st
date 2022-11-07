@@ -117,6 +117,7 @@ html {
 
 .inputContainer {
   padding-left: 25px;
+  text-align: center;
 }
 
 .inputSec {
@@ -147,6 +148,7 @@ html {
 .tableDiv {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 50px;
 
 }
@@ -154,6 +156,7 @@ html {
 .tableDiv table {
   border-bottom: 1px solid black;
   width: 250px;
+  margin: 15px 70px;
 }
 
 .tableDiv th {

@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import Button from "./Button.js";
 import CategoryDrop from "./CategoryDrop.js";
 
 
 function CategorysInput(props) {
-    const {label} = props
+    const {label,} = props
     
     let element = 
     <div className="inputContainer">
