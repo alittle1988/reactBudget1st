@@ -1,41 +1,93 @@
-import React from "react";
+import React  from "react";
 import CategorysInput from "./CategorysInput";
+import { useState } from "react";
 
 const Categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
 
 function CategoryDrop() {
+    const [category, setCategory] = useState("");
     
-        let element = 
-        <div className="categoryContainer">
-            <label className="categoryLabel">Category:</label>
-            <select onChange={handleCategoryChange} className="categoryDrop" id="categoryDropdown">
-            <option value=""  disabled selected>Please Select</option>
-            { Categorys.map(category => <option value={category.toLocaleLowerCase()} className="categorySelect">{category}</option>)}
+    
+    let element =
+    <>
+    <div className="categoryContainer">
+        <label className="categoryLabel">Category:</label>
+        <select onChange={e => setCategory(e.target.value)} className="categoryDrop" id="categoryDropdown" value={category}>
+        <option value=""  disabled selected>Please Select</option>
+        { Categorys.map((category) => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
         </select>
-     </div>;
+    </div>
+    </>
 
-        
-        
-            function handleCategoryChange() {
-                const dropDown = document.querySelector('#categoryDropdown');
-                let selectedItem = dropDown.options[dropDown.selectedIndex].value;
-                if(selectedItem === 'expenses'){
-                    
-                }
-       
-        
-                alert(selectedItem)
-                return selectedItem;
-                
-            }
-        
-        
+    switch (category) {
+        case "income":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "tips":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "expenses":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "myself":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "eating out":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "misc":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "gas":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
+        case "groceries":
+            return (
+                <>
+                {element}
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                </>
+            )
+            break;
 
-
-    return element;
-
-    
-    
+    }
+     
+    return element
 
 };
 

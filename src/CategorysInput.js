@@ -3,13 +3,14 @@ import Button from "./Button.js";
 import CategoryDrop from "./CategoryDrop.js";
 
 
-function CategorysInput() {
+function CategorysInput(props) {
+    const {label} = props
     
     let element = 
     <div className="inputContainer">
         <form action="#">
             <div className="inputSec">
-            <label className="inputLabel" id="titleLabel">Expenses:</label>
+            <label className="inputLabel" id="titleLabel">{label}</label>
             <input type="text" className="categoryTextField"></input>
             </div>
             

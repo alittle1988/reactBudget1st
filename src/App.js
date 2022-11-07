@@ -5,6 +5,8 @@ import CategorysInput from "./CategorysInput.js";
 import ExpenseTable from "./ExpenseTable.js";
 import TipsTable from './TipsTable.js';
 import IncomeTable from "./IncomeTable.js"
+import CategoryDropInput from './CategoryDropInput';
+
 
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <CategoryDrop />
+      <CategoryDrop></CategoryDrop>
      
       <div className='tableDiv'>
         <ExpenseTable></ExpenseTable>
