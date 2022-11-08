@@ -1,64 +1,37 @@
 import React from "react";
-
+import { Form, Col, Row } from "react-bootstrap";
 function handleYearChange() {
     alert("super duper gang");
 }
+
+const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+const months= ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
 
 
 function Header() {
     return (
         <div className="header">
-            <h1>Budget</h1>
-            <select onChange={handleYearChange} className="yearDropdown">
-                <option className="year">2022</option>
-                <option className="year">2023</option>
-                <option className="year">2024</option>
-                <option className="year">2025</option>
-                <option className="year">2026</option>
-                <option className="year">2027</option>
-                <option className="year">2028</option>
-                <option className="year">2029</option>
-                <option className="year">2030</option>
-                <option className="year">2031</option>
-            </select>
-            <ul className="ul-header">
-                <li>
-                    <a href="#" className="link">January</a>
-                </li>
-                <li>
-                    <a href="#" className="link">Febuary</a>
-                </li>
-                <li>
-                    <a href="#" className="link">March</a>
-                </li>
-                <li>
-                    <a href="#" className="link">April</a>
-                </li>
-                <li>
-                    <a href="#" className="link">May</a>
-                </li>
-                <li>
-                    <a href="#" className="link">June</a>
-                </li>
-                <li>
-                    <a href="#" className="link">July</a>
-                </li>
-                <li>
-                    <a href="#" className="link">August</a>
-                </li>
-                <li>
-                    <a href="#" className="link">September</a>
-                </li>
-                <li>
-                    <a href="#" className="link">October</a>
-                </li>
-                <li>
-                    <a href="#" className="link">November</a>
-                </li>
-                <li>
-                    <a href="#" className="link">December</a>
-                </li>
-            </ul>
+            <h1>Budget App</h1>
+            
+            <Row className="headerRow">
+                <Col className="headerCol">
+                    <Form style={{display:"flex"}} className="my-2">
+                        <Form.Label style={{fontSize:25}} className="mx-3">years: </Form.Label>
+                        <Form.Select onChange={handleYearChange} style={{width:120, height:40}}>
+                            { years.map((year) => <option value={year}>{year}</option>)}
+                        </Form.Select>
+                    </Form>
+                </Col>
+                <Col className="headerCol">
+                    <Form style={{display:"flex"}} className="my-2">
+                        <Form.Label style={{fontSize:25}} className="mx-3">Months:</Form.Label>
+                        <Form.Select onChange={handleYearChange}  style={{width:120, height:40}}>
+                            { months.map(month => <option value={month}>{month}</option>)}
+                        </Form.Select>
+                    </Form>
+                </Col>
+            </Row>
+            
         </div>
     )
 }

@@ -68,33 +68,9 @@ html {
   
 }
 
-.yearDropdown {
-  width: 75px;
-}
-
-.ul-header {
+.headerCol {
   display: flex;
-  justify-content:space-between;
-  padding: 10px 10px;
-  font-size: 1.25rem;
-  margin: 0;
-  
-}
-
-.ul-header li {
-  padding: 0 10px;
-  list-style-type: none;
-  
-}
-
-.link {
-  text-decoration: none;
-  color: black;
-}
-
-.link:hover {
-  text-decoration: underline;
-  color: white;
+  justify-content: center;
 }
 
 /* Category Section */
@@ -132,7 +108,7 @@ html {
   padding-right:  10px;
 }
 
-.submitButton {
+/*.submitButton {
   border-radius: 15px;
   width: 75px;
 
@@ -141,7 +117,7 @@ html {
   cursor: pointer;
   background-color: blue;
   color: white;
-}
+}*/
 
 /* Table Section*/
 

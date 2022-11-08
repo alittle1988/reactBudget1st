@@ -1,11 +1,12 @@
-import React  from "react";
+import React, {useState}  from "react";
 import CategorysInput from "./CategorysInput";
-import { useState } from "react";
+
 
 const Categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
 
 function CategoryDrop() {
     const [category, setCategory] = useState("");
+    const [incomeTable, setIncomeTable] = useState(<tr><td>stuff</td><td>5</td></tr>)
     
     
     let element =
@@ -24,7 +25,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"}></CategorysInput>
                 </>
             )
             break;

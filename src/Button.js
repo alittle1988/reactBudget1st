@@ -12,7 +12,7 @@ function Button(props) {
     let {className, children, ...rest} = props
     const classes = clsx("submitButton", className)
     return (
-        <button onClick={handleSubmitClick} className={classes} {...rest}>{children}</button>
+        <button onClick={handleSubmitClick}  className={classes} {...rest}>{children}</button>
     )
 }
 

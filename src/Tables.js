@@ -12,10 +12,7 @@ function Tables(props) {
                 <th>{title}</th>
                 <th>Amount</th>
             </tr>
-            <tr>
-                <td>Stuff</td>
-                <td>10</td>
-            </tr>
+                
     
         </table>
         

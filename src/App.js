@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from "./Header.js";
 import CategoryDrop from "./CategoryDrop.js";
-import CategorysInput from "./CategorysInput.js";
 import Tables from "./Tables.js";
 
 
