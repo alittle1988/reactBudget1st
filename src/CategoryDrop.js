@@ -3,10 +3,10 @@ import {Container, Form} from "react-bootstrap";
 import CategorysInput from "./CategorysInput";
 
 
-const Categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
 
-function CategoryDrop() {
-    const [category, setCategory] = useState("");
+
+function CategoryDrop(props) {
+   
     
 
     
@@ -16,21 +16,21 @@ function CategoryDrop() {
     <Container>
         <Form style={{display:"flex"}} className="my-5">
             <Form.Label style={{fontSize:30}} className="mx-2">Category:</Form.Label>
-            <Form.Select onChange={e => setCategory(e.target.value)} style={{width: 200}} className="categoryDrop" id="categoryDropdown" value={category}>
+            <Form.Select onChange={props.onCategoryChange} style={{width: 200}} className="categoryDrop" id="categoryDropdown" value={props.category}>
                 <option value="" disabled>Select Category</option>
-                { Categorys.map(category => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
+                { props.categorys.map(category => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
             </Form.Select>
         </Form>
     </Container>
 
     
 
-    switch (category) {
+    switch (props.category) {
         case "income":
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)}></CategorysInput>
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)}></CategorysInput>
                 </>
             )
             break;
@@ -38,7 +38,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -46,7 +46,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -54,7 +54,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -62,7 +62,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -70,7 +70,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -78,7 +78,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;
@@ -86,7 +86,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
+                <CategorysInput label={props.category[0].toUpperCase() + props.category.substring(1)} />
                 </>
             )
             break;

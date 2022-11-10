@@ -7,14 +7,21 @@ import CategoryDrop from "./CategoryDrop.js";
 import Tables from "./Tables.js";
 
 
+const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
+
 
 function App() {
+  const [category, setCategory] = useState("");
+
+  function handleCategoryChange(e) {
+    setCategory(e.target.value);
+  }
   
   
   return (
     <div className="App">
       <Header />
-      <CategoryDrop></CategoryDrop>
+      <CategoryDrop onCategoryChange={handleCategoryChange} categorys={categorys} category={category}></CategoryDrop>
      
       <Container className='tableContainer'>
           <Tables title="Income" />
