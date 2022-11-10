@@ -1,12 +1,27 @@
 import React, {useState} from "react";
 //import Button from "./Button.js";
-import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import { Button, Form, Container, Row } from 'react-bootstrap';
 
 
 
 
 function CategorysInput(props) {
-    const {label,} = props
+    const [validate, setValidate] = useState("");
+    const [things, setThings] = useState("");
+    const [amount, setAmount] = useState("");
+    
+    const {label} = props;
+
+    function onButtonClick() {
+        if(!things || !amount) {
+            setValidate("Please enter things and amount!")
+            return;
+        }
+        alert("fuck Yeah");
+        setThings("")
+        setAmount("")
+        setValidate("")
+    }
     
     let element = 
         <Container  >
@@ -14,32 +29,18 @@ function CategorysInput(props) {
                     <Form>
                         <Form.Group>
                             <Form.Label>{label}</Form.Label>
-                            <Form.Control type="text" placeholder="Things" style={{width:150}}></Form.Control>
+                            <Form.Control onChange={e => setThings(e.target.value)} type="text" value={things} placeholder="Things" style={{width:150}}></Form.Control>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>Amount:</Form.Label>
-                            <Form.Control type="text" placeholder="$0.00" style={{width:150}}></Form.Control>
+                            <Form.Label>Amount</Form.Label>
+                            <Form.Control onChange={e => setAmount(e.target.value)} type="text" value={amount} placeholder="$0.00" style={{width:150}}></Form.Control>
                         </Form.Group>
                     </Form>
+                    <div className="validate">{validate}</div>
                 </Row>
+                <Button onClick={onButtonClick} className="submitButton">Submit</Button>
         </Container>
 
-    /*let element = 
-    <div className="inputContainer">
-        <form action="#">
-            <div className="inputSec">
-            <label className="inputLabel" id="titleLabel">{label}</label>
-            <input type="text" className="categoryTextField"></input>
-            </div>
-            
-            <div className="inputSec">
-            <label className="inputLabel" id="amountLabel">Amount:</label>
-            <input type="number"></input>
-            </div>
-            
-        </form>
-        <Button>Submit</Button>
-    </div>;*/
 
 
     

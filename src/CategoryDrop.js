@@ -1,4 +1,5 @@
 import React, {useState}  from "react";
+import {Container, Form} from "react-bootstrap";
 import CategorysInput from "./CategorysInput";
 
 
@@ -6,26 +7,30 @@ const Categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc",
 
 function CategoryDrop() {
     const [category, setCategory] = useState("");
-    const [incomeTable, setIncomeTable] = useState(<tr><td>stuff</td><td>5</td></tr>)
+    
+
     
     
     let element =
-    <>
-    <div className="categoryContainer">
-        <label className="categoryLabel">Category:</label>
-        <select onChange={e => setCategory(e.target.value)} className="categoryDrop" id="categoryDropdown" value={category}>
-        <option value=""  disabled selected>Please Select</option>
-        { Categorys.map((category) => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
-        </select>
-    </div>
-    </>
+
+    <Container>
+        <Form style={{display:"flex"}} className="my-5">
+            <Form.Label style={{fontSize:30}} className="mx-2">Category:</Form.Label>
+            <Form.Select onChange={e => setCategory(e.target.value)} style={{width: 200}} className="categoryDrop" id="categoryDropdown" value={category}>
+                <option value="" disabled>Select Category</option>
+                { Categorys.map(category => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
+            </Form.Select>
+        </Form>
+    </Container>
+
+    
 
     switch (category) {
         case "income":
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"}></CategorysInput>
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)}></CategorysInput>
                 </>
             )
             break;
@@ -33,7 +38,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -41,7 +46,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -49,7 +54,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -57,7 +62,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -65,7 +70,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -73,7 +78,7 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
@@ -81,15 +86,18 @@ function CategoryDrop() {
             return (
                 <>
                 {element}
-                <CategorysInput label={category[0].toUpperCase() + category.substring(1) + ":"} />
+                <CategorysInput label={category[0].toUpperCase() + category.substring(1)} />
                 </>
             )
             break;
+        default:
+            return element
 
     }
      
-    return element
+    
 
 };
 
 export default CategoryDrop;
+

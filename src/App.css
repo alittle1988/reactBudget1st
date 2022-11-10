@@ -91,63 +91,45 @@ html {
 
 /* Category Input section */
 
-.inputContainer {
-  padding-left: 25px;
-  text-align: center;
+
+.validate {
+  color: red;
+  font-size: 1.15rem;
 }
 
-.inputSec {
-  padding: 10px 0;
-}
-
-.inputSec input:focus {
-  outline: 1px solid red;
-}
-
-.inputLabel{
-  padding-right:  10px;
-}
-
-/*.submitButton {
+.submitButton {
   border-radius: 15px;
   width: 75px;
+  margin-top: 5px;
 
 }
 .submitButton:hover {
   cursor: pointer;
   background-color: blue;
   color: white;
-}*/
+
+}
 
 /* Table Section*/
 
-.tableDiv {
+.tableContainer{
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 50px;
-
+  justify-content: space-around;
 }
-
-.tableDiv table {
-  border-bottom: 1px solid black;
+.table{
   width: 250px;
-  margin: 15px 70px;
+  margin: 25px;
 }
 
-.tableDiv th {
+.table th{
+  
   text-align: center;
-  width: 50%;
-  background-color: gray;
-  height: 35px;
-
-
+  font-size: 1.35rem;
 }
 
-.tableDiv td {
+.table td {
   text-align: center;
-  width: 50%;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
 }
+
+
