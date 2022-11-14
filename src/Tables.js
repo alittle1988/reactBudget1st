@@ -1,13 +1,17 @@
-import React,  { useState } from "react";
-import {Table, Container} from "react-bootstrap";
+import React  from "react";
+import {Table} from "react-bootstrap";
 
 
 
 function Tables(props) {
-    const {title} = props;
-
-    let element = 
+    const {title, array} = props;
+    console.log(array)
     
+        
+    
+
+
+    return (
         <Table striped bordered hover className="table">
             <thead>
                 <tr>
@@ -16,17 +20,12 @@ function Tables(props) {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Stuff</td>
-                    <td>Money</td>
-                </tr>
+                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount)}</td></tr>)}
+                
                 
             </tbody>
         </Table>
-    
-
-
-    return element
+    )
 }
 
 export default Tables
