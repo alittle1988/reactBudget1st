@@ -34,6 +34,16 @@ html {
   justify-content: center;
 }
 
+.date-time {
+  font-size: 1.25rem;
+}
+
+@media only screen and (maxWidth:580px){
+  .headerCol {
+    display: block;
+  }
+}
+
 /* Category Section */
 
 .categoryContainer {

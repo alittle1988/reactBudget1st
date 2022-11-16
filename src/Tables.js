@@ -5,7 +5,7 @@ import {Table} from "react-bootstrap";
 
 function Tables(props) {
     const {title, array} = props;
-    console.log(array)
+    
     
         
     
