@@ -19,7 +19,6 @@ function CategoryDrop(props) {
         return;
     }
     onIncomeChange(category, things, amount)
-    console.log(category)
     setThings("");
     setAmount("");
     setValidate("");

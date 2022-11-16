@@ -1,5 +1,7 @@
 import React from "react";
 import { Form, Col, Row } from "react-bootstrap";
+import DateClock from "./DateClock.js";
+
 function handleYearChange() {
     alert("super duper gang");
 }
@@ -21,6 +23,9 @@ function Header() {
                             { years.map((year,index) => <option key={index} value={year}>{year}</option>)}
                         </Form.Select>
                     </Form>
+                </Col>
+                <Col>
+                <DateClock />
                 </Col>
                 <Col className="headerCol">
                     <Form style={{display:"flex"}} className="my-2">
