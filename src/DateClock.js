@@ -5,7 +5,7 @@ import React, {useState, useEffect} from "react";
 export default function DateClock(props) {
     const [date, setDate] = useState(new Date());
     const theDate = date.toDateString();
-    const theTime = date.getHours() + ':' + (date.getMinutes()<10?'0':'') + date.getMinutes()  + ':' +( date.getSeconds()<10?"0":"") + date.getSeconds();
+    const theTime = (date.getHours()<10?'0':'') + date.getHours() + ':' + (date.getMinutes()<10?'0':'') + date.getMinutes();
     
     useEffect(() => {
        const interval =  setInterval(() => {

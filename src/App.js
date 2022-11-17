@@ -7,6 +7,7 @@ import CategoryDrop from "./CategoryDrop.js";
 import Tables from "./Tables.js";
 
 
+
 const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
 
 

@@ -1,5 +1,6 @@
 import React  from "react";
 import {Table} from "react-bootstrap";
+import {tableData} from './data.json'
 
 
 
@@ -30,5 +31,6 @@ function Tables(props) {
 
 export default Tables
 
-// need to use submit button to insert data to table
+
+//trying to figure out JSON to hold table info
  

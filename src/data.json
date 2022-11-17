@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "Stuff": "check",
+        "amount": 500
+    },
+    {
+        "id": 2,
+        "Stuff": "check2",
+        "amount": 400
+    },
+    {
+        "id": 2,
+        "Stuff": "check3",
+        "amount": 800
+    }
+]
