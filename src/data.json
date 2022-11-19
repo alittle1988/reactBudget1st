@@ -1,17 +1,39 @@
-[
-    {
-        "id": 1,
-        "Stuff": "check",
-        "amount": 500
-    },
-    {
-        "id": 2,
-        "Stuff": "check2",
-        "amount": 400
-    },
-    {
-        "id": 2,
-        "Stuff": "check3",
-        "amount": 800
-    }
-]
+[{
+    "Income":[
+        {
+            "id":  1,
+            "what": "check1",
+            "amount": 500
+            
+        },
+        {
+            "id": 2,
+            "what": "check2",
+            "amount": 500
+        },
+        {    
+            "id": 3,
+            "what": "check3",
+            "amount": 500
+        }
+        
+    ],
+    "Tips": [
+        {
+            "id": 1,
+            "what": "11/11/22",
+            "amount": 400
+        },
+        {
+            "id": 2,
+            "what": "11/12/22",
+            "amount": 300
+        },
+        {
+            "id": 3,
+            "what": "11/13/22",
+            "amount": 350
+        }
+
+    ]
+}]

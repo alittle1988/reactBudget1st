@@ -5,10 +5,13 @@ import { Container} from 'react-bootstrap';
 import Header from "./Header.js";
 import CategoryDrop from "./CategoryDrop.js";
 import Tables from "./Tables.js";
+import data from "./data.json";
 
 
 
 const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
+
+
 
 
 
@@ -50,7 +53,8 @@ function App() {
 
   }
   
-  
+ 
+ 
   
   return (
     <div className="App">
@@ -59,14 +63,8 @@ function App() {
      
       <Container className='tableContainer'>
         <h1 className='tableContainerH1'>Tables</h1>
-        {income.length > 0 ? <Tables title={categorys[0]} array={income} /> : <div></div>}
-        {tips.length > 0 ? <Tables title={categorys[1]} array={tips} /> : <div></div>}
-        {expenses.length > 0 ? <Tables title={categorys[2]} array={expenses} /> : <div></div>}
-        {myself.length > 0 ? <Tables title={categorys[3]} array={myself} /> : <div></div>}
-        {eatingOut.length > 0 ? <Tables title={categorys[4]} array={eatingOut} /> : <div></div>}
-        {misc.length > 0 ? <Tables title={categorys[5]} array={misc} /> : <div></div> }
-        {gas.length > 0 ? <Tables title={categorys[6]} array={gas} /> : <div></div> }
-        {groceries.length > 0 ? <Tables title={categorys[7]} array={groceries} /> : <div></div>}
+        <Tables title={"Income"} amount={"Amount"} data={data[0].Income}/>
+        <Tables title={"tips"} amount={"Amount"} data={data[0].Tips} />
           
       </Container>
     </div>

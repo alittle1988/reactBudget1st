@@ -1,14 +1,24 @@
 import React  from "react";
 import {Table} from "react-bootstrap";
-import {tableData} from './data.json'
+
+
+
+
 
 
 
 function Tables(props) {
-    const {title, array} = props;
+    const DisplayData = props.data.map((info) => {
+        return (
+            <tr key={info.id} >
+                <td >{info.what}</td>
+                <td>{info.amount}</td>
+            </tr>
+        )
+    })
     
     
-        
+      
     
 
 
@@ -16,21 +26,20 @@ function Tables(props) {
         <Table striped bordered hover className="table">
             <thead>
                 <tr>
-                    <th className="title">{title}</th>
-                    <th className="amount" style={{backgroundColor: "green"}}>Amount</th>
+                    <td>{props.title}</td>
+                    <td>{props.amount}</td>
+                
                 </tr>
             </thead>
             <tbody>
-                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount)}</td></tr>)}
-                
-                
+                {DisplayData}
             </tbody>
         </Table>
-    )
+    );
 }
 
 export default Tables
 
 
-//trying to figure out JSON to hold table info
+//trying to figure out how to send input data to JSON file
  
