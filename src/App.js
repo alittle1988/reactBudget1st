@@ -74,4 +74,3 @@ function App() {
 export default App;
 
 
-// left off moving state up from categoryInput to App
