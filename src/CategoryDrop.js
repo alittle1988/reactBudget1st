@@ -1,6 +1,7 @@
 import React, {useState}  from "react";
 import {Container, Form} from "react-bootstrap";
 import CategorysInput from "./CategorysInput";
+import data from "./data.json";
 
  
 
@@ -10,7 +11,7 @@ function CategoryDrop(props) {
    const [amount, setAmount] = useState("");
    const [validate, setValidate] = useState("");
    const {onIncomeChange, category} = props
-
+    //console.log(data[0])
    
 
    function handleButtonClick() {
@@ -18,6 +19,7 @@ function CategoryDrop(props) {
         setValidate("Please enter Things and Amount")
         return;
     }
+
     onIncomeChange(category, things, amount)
     setThings("");
     setAmount("");
@@ -27,6 +29,7 @@ function CategoryDrop(props) {
    }
 
    function handleThingsChange(e) {
+
     setThings(e.target.value)
    }
 

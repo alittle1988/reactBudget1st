@@ -25,6 +25,9 @@ function App() {
   const [misc, setMisc] = useState([]);
   const [gas, setGas] = useState([]);
   const [groceries, setGroceries] = useState([]);
+
+  
+  
   
 
   function handleCategoryChange(e) {
@@ -33,6 +36,7 @@ function App() {
 
   function incomeChange(category, name, amount) {
     if(category === "income"){
+
       setIncome([...income, {name:name, amount:amount}])
     }else if(category === "tips") {
       setTips([...tips, {name:name, amount:amount}])
@@ -64,7 +68,7 @@ function App() {
       <Container className='tableContainer'>
         <h1 className='tableContainerH1'>Tables</h1>
         <Tables title={"Income"} amount={"Amount"} data={data[0].Income}/>
-        <Tables title={"tips"} amount={"Amount"} data={data[0].Tips} />
+        <Tables title={"Tips"} amount={"Amount"} data={data[0].Tips} />
           
       </Container>
     </div>

@@ -8,19 +8,26 @@ import {Table} from "react-bootstrap";
 
 
 function Tables(props) {
-    const displayData = props.data.map((info) => {
+    const data = props.data;
+    
+    const displayData = data.map((info) => {
         return (
             <tr key={info.id} >
-                <td >{info.what}</td>
-                <td>{info.amount}</td>
+                <td className="what">{info.what}</td>
+                <td className={props.title[0].toLowerCase() + props.title.substring(1) + 'Amount'}>${info.amount}</td>
             </tr>
         )
     });
+    
 
+    let sum = 0;
+    for(let x in data) {
+        sum = sum + data[x].amount
+    }
+   
+   
+   
 
-
-    let total = props.data[0].amount + props.data[0].amount
-      
     
 
 
@@ -37,7 +44,7 @@ function Tables(props) {
                 {displayData}
                 <tr>
                     <td>Total</td>
-                    <td>{total}</td>
+                    <td>${sum}</td>
                 </tr>
             </tbody>
         </Table>
