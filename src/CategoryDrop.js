@@ -4,6 +4,7 @@ import CategorysInput from "./CategorysInput";
 import data from "./data.json";
 
  
+console.log(data[0])
 
 
 function CategoryDrop(props) {
@@ -11,7 +12,7 @@ function CategoryDrop(props) {
    const [amount, setAmount] = useState("");
    const [validate, setValidate] = useState("");
    const {onIncomeChange, category} = props
-    //console.log(data[0])
+
    
 
    function handleButtonClick() {
@@ -19,7 +20,7 @@ function CategoryDrop(props) {
         setValidate("Please enter Things and Amount")
         return;
     }
-
+    data[0].push({"id":data[0].Income.length + 1,"what":things, "amount":Number(amount)})
     onIncomeChange(category, things, amount)
     setThings("");
     setAmount("");
