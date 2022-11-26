@@ -23,7 +23,7 @@ function App() {
   const [gas, setGas] = useState([]);
   const [groceries, setGroceries] = useState([]);
   
-
+  console.log(income)
   function handleCategoryChange(e) {
     setCategory(e.target.value);
   }

@@ -22,7 +22,7 @@ function CategoryDrop(props) {
     setThings("");
     setAmount("");
     setValidate("");
-    
+   
     
    }
 
