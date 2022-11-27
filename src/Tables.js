@@ -9,7 +9,10 @@ function Tables(props) {
     
     
         
-    
+    let sum = 0;
+    for(let x in array) {
+        sum = sum + Number(array[x].amount)
+    }
 
 
     return (
@@ -22,7 +25,10 @@ function Tables(props) {
             </thead>
             <tbody>
                 {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount)}</td></tr>)}
-                
+                <tr>
+                    <td>Total</td>
+                    <td>${sum.toFixed(2)}</td>
+                </tr>
                 
             </tbody>
         </Table>
