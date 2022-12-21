@@ -1,6 +1,5 @@
 import React  from "react";
 import {Table} from "react-bootstrap";
-import {tableData} from './data.json'
 
 
 
@@ -24,7 +23,7 @@ function Tables(props) {
                 </tr>
             </thead>
             <tbody>
-                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount)}</td></tr>)}
+                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount).toFixed(2)}</td></tr>)}
                 <tr>
                     <td>Total</td>
                     <td>${sum.toFixed(2)}</td>
@@ -37,6 +36,4 @@ function Tables(props) {
 
 export default Tables
 
-
-//trying to figure out JSON to hold table info
  
