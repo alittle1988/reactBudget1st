@@ -34,11 +34,7 @@ function App() {
 }
 
 const handleShowTotal = () => {
-  if(showTotals === true) {
-    setShowTotals(false)
-  } else {
-    setShowTotals(true)
-  }
+  setShowTotals(!showTotals)
 }
   
  /* const setLocalStorage = (array) => {
@@ -126,8 +122,8 @@ const handleShowTotal = () => {
         <div className='col-6'>
           <CategoryDrop onIncomeChange={incomeChange} onIncomeLocal={incomeLocal} onCategoryChange={handleCategoryChange} income={income} categorys={categorys} category={category}></CategoryDrop>
         </div>
-        <div className='col-4 m-5'>
-          <button className='btn btn-primary' onClick={handleShowTotal}>See Category totals</button>
+        <div className='col-4' style={{marginTop: 60}}>
+          <button className='btn btn-primary' onClick={handleShowTotal}>View Category totals</button>
         </div>
       </div>
       {showTotals === true ? <Totals categorys={categorys} income={income} tips={tips} expenses={expenses} myself={myself} eatingOut={eatingOut} misc={misc} gas={gas} groceries={groceries}  /> : <div></div>}
