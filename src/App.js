@@ -25,12 +25,36 @@ function App() {
     const theData = JSON.parse(data);
     return theData || [];
   });
-  const [expenses, setExpenses] = useState([]);
-  const [myself, setMyself] = useState([]);
-  const [eatingOut, setEatingOut] = useState([]);
-  const [misc, setMisc] = useState([]);
-  const [gas, setGas] = useState([]);
-  const [groceries, setGroceries] = useState([]);
+  const [expenses, setExpenses] = useState(() => {
+    const data = localStorage.getItem("expenses");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [myself, setMyself] = useState(() => {
+    const data = localStorage.getItem("myself");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [eatingOut, setEatingOut] = useState(() => {
+    const data = localStorage.getItem("eatingOut");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [misc, setMisc] = useState(() => {
+    const data = localStorage.getItem("misc");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [gas, setGas] = useState(() => {
+    const data = localStorage.getItem("gas");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [groceries, setGroceries] = useState(() => {
+    const data = localStorage.getItem("groceries");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
   const [showTotals, setShowTotals] = useState(false);
   useEffect(() => {
     localStorage.setItem("income", JSON.stringify(income));
@@ -48,22 +72,11 @@ const handleShowTotal = () => {
   
 }
   
- /* const setLocalStorage = (array) => {
-    for(let x in array){
-    localStorage.setItem(array[x], JSON.stringify(income))
-  
-  }
-}*/
-
-  const incomeLocal = (obj, para) => {
-    localStorage.setItem(JSON.stringify(obj), JSON.stringify(para))
-  }
-  //setLocalStorage(categorys)
 
   function handleCategoryChange(e) {
     setCategory(e.target.value);
   }
-
+  // adds new data to specific list
   function incomeChange(category, name, amount) {
     let id = 0;
     if(category === "income"){
@@ -91,46 +104,32 @@ const handleShowTotal = () => {
       id = groceries.length
       setGroceries([...groceries, {id: id, name:name, amount:amount}])
     }
-    /*switch(category) {
-      case "income":
-        id = income.length
-        incomeLocal(category, [...income, {id:id, name:name, amount:amount}])
-        break;
-      case "tips":
-        id = tips.length
-        incomeLocal(category, [...tips, {id:id, name:name, amount:amount}])
-        break;
-      case "expenses":
-        id = expenses.length
-        incomeLocal(category, [...expenses, {id:id, name:name, amount:amount}])
-        break;
-      case "myself":
-        id = myself.length
-        incomeLocal(category, [...myself, {id:id, name:name, amount:amount}])
-        break;
-      case "eating out":
-        id = eatingOut.length
-        incomeLocal(category, [...eatingOut, {id:id, name:name, amount:amount}])
-        break;
-      case "misc":
-        id = misc.length
-        incomeLocal(category, [...misc, {id:id, name:name, amount:amount}])
-        break;
-      case "gas":
-        id = gas.length
-        incomeLocal(category, [...gas, {id:id, name:name, amount:amount}])
-        break;
-      case "groceries":
-        id = groceries.length
-        incomeLocal(category, [...groceries, {id:id, name:name, amount:amount}])
-        break;
-      default:
-        alert("You Lose the Game!")
-          
-    }*/
-    
-    
 
+  }
+
+  const handleCellDeleteBtn = (array, item, title) => {
+    const list = [...array];
+    list.forEach((index) => {
+      if(index.name === item.name) {
+        const a = list.indexOf(index);
+        list.splice(a, 1);
+        let id = 0;
+        list.forEach((item) => {
+          item.id = id;
+          id++
+
+        })
+        switch(title) {
+          case "Income":
+            setIncome(list)
+            break;
+          case "Tips":
+            setTips(list)
+            break;
+        }
+      }
+    })
+    
   }
   
   
@@ -139,7 +138,7 @@ const handleShowTotal = () => {
       <Header />
       <div className='row'>
         <div className='col-6'>
-          <CategoryDrop onIncomeChange={incomeChange} onIncomeLocal={incomeLocal} onCategoryChange={handleCategoryChange} income={income} categorys={categorys} category={category}></CategoryDrop>
+          <CategoryDrop onIncomeChange={incomeChange} onCategoryChange={handleCategoryChange} income={income} categorys={categorys} category={category}></CategoryDrop>
         </div>
         <div className='col-4' style={{marginTop: 60}}>
           <button className='btn btn-primary' onClick={handleShowTotal}>View Category totals</button>
@@ -149,14 +148,14 @@ const handleShowTotal = () => {
       
       <Container className='tableContainer'>
         <h1 className='tableContainerH1'>Tables</h1>
-        {income.length > 0 ? <Tables title={categorys[0]} array={income} /> : <div></div>}
-        {tips.length > 0 ? <Tables title={categorys[1]} array={tips} /> : <div></div>}
-        {expenses.length > 0 ? <Tables title={categorys[2]} array={expenses} /> : <div></div>}
-        {myself.length > 0 ? <Tables title={categorys[3]} array={myself} /> : <div></div>}
-        {eatingOut.length > 0 ? <Tables title={categorys[4]} array={eatingOut} /> : <div></div>}
-        {misc.length > 0 ? <Tables title={categorys[5]} array={misc} /> : <div></div> }
-        {gas.length > 0 ? <Tables title={categorys[6]} array={gas} /> : <div></div> }
-        {groceries.length > 0 ? <Tables title={categorys[7]} array={groceries} /> : <div></div>}
+        {income.length > 0 ? <Tables title={categorys[0]} array={income} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
+        {tips.length > 0 ? <Tables title={categorys[1]} array={tips} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
+        {expenses.length > 0 ? <Tables title={categorys[2]} array={expenses} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
+        {myself.length > 0 ? <Tables title={categorys[3]} array={myself} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
+        {eatingOut.length > 0 ? <Tables title={categorys[4]} array={eatingOut} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
+        {misc.length > 0 ? <Tables title={categorys[5]} array={misc} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div> }
+        {gas.length > 0 ? <Tables title={categorys[6]} array={gas} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div> }
+        {groceries.length > 0 ? <Tables title={categorys[7]} array={groceries} onCellDeleteBtn={handleCellDeleteBtn} /> : <div></div>}
           
       </Container>
     </div>
