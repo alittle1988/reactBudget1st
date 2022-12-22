@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Container} from 'react-bootstrap';
@@ -15,26 +15,37 @@ const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc",
 
 function App() {
   const [category, setCategory] = useState("");
-  const [income, setIncome] = useState([]);
-  const [tips, setTips] = useState([]);
+  const [income, setIncome] = useState(() => {
+    const data = localStorage.getItem("income");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
+  const [tips, setTips] = useState(() => {
+    const data = localStorage.getItem("tips");
+    const theData = JSON.parse(data);
+    return theData || [];
+  });
   const [expenses, setExpenses] = useState([]);
   const [myself, setMyself] = useState([]);
   const [eatingOut, setEatingOut] = useState([]);
   const [misc, setMisc] = useState([]);
   const [gas, setGas] = useState([]);
   const [groceries, setGroceries] = useState([]);
-  const [showTotals, setShowTotals] = useState(false)
-
-  function getTotal(array) {
-    let sum = 0;
-    array.forEach(element => {
-        sum += Number(element.amount)
-    });
-    return sum
-}
+  const [showTotals, setShowTotals] = useState(false);
+  useEffect(() => {
+    localStorage.setItem("income", JSON.stringify(income));
+    localStorage.setItem("tips", JSON.stringify(tips));
+    localStorage.setItem("expenses", JSON.stringify(expenses));
+    localStorage.setItem("myself", JSON.stringify(myself));
+    localStorage.setItem("eatingOut", JSON.stringify(eatingOut));
+    localStorage.setItem("misc", JSON.stringify(misc));
+    localStorage.setItem("gas", JSON.stringify(gas));
+    localStorage.setItem("groceries", JSON.stringify(groceries));
+  }, [income, tips, expenses, myself, eatingOut, misc, gas, groceries])
 
 const handleShowTotal = () => {
   setShowTotals(!showTotals)
+  
 }
   
  /* const setLocalStorage = (array) => {
@@ -56,23 +67,31 @@ const handleShowTotal = () => {
   function incomeChange(category, name, amount) {
     let id = 0;
     if(category === "income"){
-      setIncome([...income, {id: id,name:name, amount:amount}])
+      id = income.length;
+      setIncome([...income, {id: id, name:name, amount:amount}])
     }else if(category === "tips") {
-      setTips([...tips, {name:name, amount:amount}])
+      id = tips.length;
+      setTips([...tips, {id: id, name:name, amount:amount}])
     } else if( category === "expenses") {
-      setExpenses([...expenses, {name:name, amount:amount}])
+      id = expenses.length;
+      setExpenses([...expenses, {id: id, name:name, amount:amount}])
     } else if (category === "myself"){
-      setMyself([...myself, {name:name, amount:amount}])
+      id = myself.length
+      setMyself([...myself, {id: id, name:name, amount:amount}])
     } else if (category === "eating out"){
-      setEatingOut([...eatingOut, {name:name, amount:amount}])
+      id = eatingOut.length
+      setEatingOut([...eatingOut, {id: id, name:name, amount:amount}])
     } else if (category === "misc"){
-      setMisc([...misc, {name:name, amount:amount}])
+      id = misc.length
+      setMisc([...misc, {id: id, name:name, amount:amount}]);
     } else if (category === "gas"){
-      setGas([...gas, {name:name, amount:amount}])
+      id = gas.length
+      setGas([...gas, {id: id, name:name, amount:amount}])
     } else if (category === "groceries"){
-      setGroceries([...groceries, {name:name, amount:amount}])
+      id = groceries.length
+      setGroceries([...groceries, {id: id, name:name, amount:amount}])
     }
-    switch(category) {
+    /*switch(category) {
       case "income":
         id = income.length
         incomeLocal(category, [...income, {id:id, name:name, amount:amount}])
@@ -108,7 +127,7 @@ const handleShowTotal = () => {
       default:
         alert("You Lose the Game!")
           
-    }
+    }*/
     
     
 
@@ -148,3 +167,7 @@ export default App;
 
 
 /// left off trying to store and array of objects in local storage named by category!
+
+// try saving data to JSON then saving entire JSON to localStorage!!
+
+// add X on totals popup 
