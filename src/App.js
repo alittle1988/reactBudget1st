@@ -56,6 +56,7 @@ function App() {
     return theData || [];
   });
   const [showTotals, setShowTotals] = useState(false);
+  // updates localStorage
   useEffect(() => {
     localStorage.setItem("income", JSON.stringify(income));
     localStorage.setItem("tips", JSON.stringify(tips));
@@ -66,13 +67,13 @@ function App() {
     localStorage.setItem("gas", JSON.stringify(gas));
     localStorage.setItem("groceries", JSON.stringify(groceries));
   }, [income, tips, expenses, myself, eatingOut, misc, gas, groceries])
-
+// handles showtotal true/false
 const handleShowTotal = () => {
   setShowTotals(!showTotals)
   
 }
   
-
+  //handles changing Category for dropdown
   function handleCategoryChange(e) {
     setCategory(e.target.value);
   }
@@ -106,7 +107,7 @@ const handleShowTotal = () => {
     }
 
   }
-
+  // handles removing data from state arrays
   const handleCellDeleteBtn = (array, item, title) => {
     const list = [...array];
     list.forEach((index) => {

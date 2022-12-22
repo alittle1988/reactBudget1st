@@ -38,9 +38,10 @@ html {
   font-size: 1.25rem;
 }
 
-@media only screen and (maxWidth:580px){
-  .headerCol {
-    display: block;
+@media only screen and (maxWidth:530px){
+  .headerRow {
+    
+    
   }
 }
 

@@ -14,11 +14,11 @@ export default function DateClock(props) {
        return () => clearInterval(interval)
     }, [])
     
-    
+    //<p className="time">{theTime}</p>
     return (
     <div className="date-time">
         <p className="date">{theDate}</p>
-        <p className="time">{theTime}</p>
+        
     </div>
     )
 }
