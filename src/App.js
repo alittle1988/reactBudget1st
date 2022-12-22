@@ -126,6 +126,27 @@ const handleShowTotal = () => {
           case "Tips":
             setTips(list)
             break;
+          case "Expenses":
+            setExpenses(list)
+            break;
+          case "Myself":
+            setMyself(list)
+            break;
+          case "Eating Out":
+            setEatingOut(list)
+            break;
+          case "Misc":
+            setMisc(list)
+            break;
+          case "Gas":
+            setGas(list)
+            break;
+          case "Groceries":
+            setGroceries(list)
+            break;
+          default:
+            alert("You lose the Game")
+            break;
         }
       }
     })
@@ -137,7 +158,7 @@ const handleShowTotal = () => {
     <div className="App">
       <Header />
       <div className='row'>
-        <div className='col-6'>
+        <div className='col-md-6'>
           <CategoryDrop onIncomeChange={incomeChange} onCategoryChange={handleCategoryChange} income={income} categorys={categorys} category={category}></CategoryDrop>
         </div>
         <div className='col-4' style={{marginTop: 60}}>
@@ -165,8 +186,3 @@ const handleShowTotal = () => {
 export default App;
 
 
-/// left off trying to store and array of objects in local storage named by category!
-
-// try saving data to JSON then saving entire JSON to localStorage!!
-
-// add X on totals popup 

@@ -24,7 +24,7 @@ function Tables(props) {
                 </tr>
             </thead>
             <tbody>
-                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount).toFixed(2)}</td><td><button className="btn btn-success" onClick={() => onCellDeleteBtn(array, item, title)} >delete</button></td></tr>)}
+                {array.map((item, index) => <tr style={{margin:"0, auto"}} key={index}><td>{item.name}</td><td>${Number(item.amount).toFixed(2)}</td><td><button className="btn btn-success" onClick={() => onCellDeleteBtn(array, item, title)} >delete</button></td></tr>)}
                 <tr>
                     <td>Total</td>
                     <td>${sum.toFixed(2)}</td>
