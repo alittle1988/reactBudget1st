@@ -3,7 +3,7 @@ import React from "react";
 
 
 export default function Totals(props) {
-    const {categorys, income, tips, expenses, myself, eatingOut, misc, gas, groceries} = props;
+    const {categorys, income, tips, expenses, myself, eatingOut, misc, gas, groceries, onShowTotal} = props;
 
     function getTotal(array) {
         let sum = 0;
@@ -16,11 +16,12 @@ export default function Totals(props) {
     
     return (
         <div className="popUp-table">
+            <h4 className="text-end p-2 close" onClick={onShowTotal}>X</h4>
             <table className="table">
                 <thead>
                     <tr>
-                        <td>Categorys</td>
-                        <td>Total</td>
+                        
+                        <td colSpan="2"><h3>Totals</h3></td>
                     </tr>
                     <tr>
                         <td>{categorys[0]}</td>

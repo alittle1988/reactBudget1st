@@ -144,7 +144,7 @@ const handleShowTotal = () => {
           <button className='btn btn-primary' onClick={handleShowTotal}>View Category totals</button>
         </div>
       </div>
-      {showTotals === true ? <Totals categorys={categorys} income={income} tips={tips} expenses={expenses} myself={myself} eatingOut={eatingOut} misc={misc} gas={gas} groceries={groceries}  /> : <div></div>}
+      {showTotals === true ? <Totals categorys={categorys} income={income} tips={tips} expenses={expenses} myself={myself} eatingOut={eatingOut} misc={misc} gas={gas} groceries={groceries} onShowTotal={handleShowTotal} /> : <div></div>}
       
       <Container className='tableContainer'>
         <h1 className='tableContainerH1'>Tables</h1>
