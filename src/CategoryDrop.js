@@ -9,7 +9,7 @@ function CategoryDrop(props) {
    const [things, setThings] = useState("");
    const [amount, setAmount] = useState("");
    const [validate, setValidate] = useState("");
-   const {onIncomeChange, category, onIncomeLocal} = props
+   const {onIncomeChange, category} = props
 
    
 

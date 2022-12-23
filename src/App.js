@@ -9,12 +9,15 @@ import Totals from "./Totals.js"
 
 
 
-const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"]
+const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"];
+const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
+const months= ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
 
 
 
 function App() {
   const [category, setCategory] = useState("");
+  const [year, setYear] = useState(2022);
   const [income, setIncome] = useState(() => {
     const data = localStorage.getItem("income");
     const theData = JSON.parse(data);
@@ -66,7 +69,13 @@ function App() {
     localStorage.setItem("misc", JSON.stringify(misc));
     localStorage.setItem("gas", JSON.stringify(gas));
     localStorage.setItem("groceries", JSON.stringify(groceries));
-  }, [income, tips, expenses, myself, eatingOut, misc, gas, groceries])
+  }, [income, tips, expenses, myself, eatingOut, misc, gas, groceries]);
+
+// handle year change
+const handleYearChange = (par) => {
+  setYear(par)
+}
+
 // handles showtotal true/false
 const handleShowTotal = () => {
   setShowTotals(!showTotals)
@@ -154,10 +163,10 @@ const handleShowTotal = () => {
     
   }
   
-  
+  console.log(year)
   return (
     <div className="App">
-      <Header />
+      <Header years={years} months={months} onYearchange={handleYearChange}/>
       <div className='row'>
         <div className='col-md-6'>
           <CategoryDrop onIncomeChange={incomeChange} onCategoryChange={handleCategoryChange} income={income} categorys={categorys} category={category}></CategoryDrop>
@@ -187,3 +196,5 @@ const handleShowTotal = () => {
 export default App;
 
 
+// Left off storing year in localStorage with all list/states included
+// passing down year state to header then lifting state up to update
