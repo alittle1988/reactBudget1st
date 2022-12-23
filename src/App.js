@@ -8,7 +8,7 @@ import Tables from "./Tables.js";
 import Totals from "./Totals.js"
 
 
-// test
+
 const categorys = ["Income", "Tips", "Expenses", "Myself", "Eating Out", "Misc", "Gas", "Groceries"];
 const years = [2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030];
 const months= ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]
