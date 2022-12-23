@@ -4,9 +4,31 @@ import { Button, Form, Container, Row } from 'react-bootstrap';
 
 
 
-
 function CategorysInput(props) {
     const {label, things, amount, validate} = props;
+
+    const selectThingsType = (par) => {
+        switch(par) {
+            case "Tips":
+                return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
+                break;
+            case "Gas":
+                return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
+                break;
+            case "Groceries":
+                return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
+                break;
+            default:
+                return <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="What" style={{width:150}}></Form.Control>
+                break;
+        }
+
+        /*if(par === "Tips" || "Gas" || "Groceries") {
+            return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="Things" style={{width:150}}></Form.Control>
+        } else {
+            return <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="Things" style={{width:150}}></Form.Control>
+        }*/
+    }
     
     
     return (
@@ -15,7 +37,7 @@ function CategorysInput(props) {
                     <Form>
                         <Form.Group>
                             <Form.Label htmlFor="input-name" >{label}</Form.Label>
-                            <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="Things" style={{width:150}}></Form.Control>
+                            {selectThingsType(label)}
                         </Form.Group>
                         <Form.Group>
                             <Form.Label htmlFor="input-amount" >Amount</Form.Label>

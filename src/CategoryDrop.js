@@ -24,6 +24,7 @@ function CategoryDrop(props) {
     setValidate("");
    
     
+    
    }
 
    function handleThingsChange(e) {
@@ -32,6 +33,7 @@ function CategoryDrop(props) {
 
    function handleAmountChange(e) {
     setAmount(e.target.value)
+    
    }
 
 
@@ -42,7 +44,7 @@ function CategoryDrop(props) {
                 <Container>
                     <Form style={{display:"flex"}} className="my-5">
                          <Form.Label style={{fontSize:30}} className="mx-2">Category:</Form.Label>
-                         <Form.Select onChange={props.onCategoryChange}  style={{width: 200}} className="categoryDrop" id="categoryDropdown" value={props.category}>
+                         <Form.Select onChange={props.onCategoryChange}  style={{width: 200}} className="categoryDrop" id="categoryDropdown" value={category}>
                             <option value="" disabled>Select Category</option>
                             { props.categorys.map(category => <option value={category.toLocaleLowerCase()} key={category} className="categorySelect">{category}</option>)}
                          </Form.Select>

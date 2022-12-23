@@ -1,18 +1,17 @@
 import React  from "react";
 import {Table} from "react-bootstrap";
-import {tableData} from './data.json'
 
 
 
 function Tables(props) {
-    const {title, array} = props;
+    const {title, array, onCellDeleteBtn} = props;
     
     
+        
     let sum = 0;
     for(let x in array) {
         sum = sum + Number(array[x].amount)
     }
-    
 
 
     return (
@@ -21,10 +20,11 @@ function Tables(props) {
                 <tr>
                     <th className="title">{title}</th>
                     <th className="amount" style={{backgroundColor: "green"}}>Amount</th>
+                    <th className="delete">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                {array.map((item, index) => <tr key={index}><td>{item.name}</td><td>${Number(item.amount)}</td></tr>)}
+                {array.map((item, index) => <tr style={{margin:"0, auto"}} key={index}><td>{item.name}</td><td>${Number(item.amount).toFixed(2)}</td><td><button className="btn btn-success" onClick={() => onCellDeleteBtn(array, item, title)} >delete</button></td></tr>)}
                 <tr>
                     <td>Total</td>
                     <td>${sum.toFixed(2)}</td>
@@ -37,6 +37,4 @@ function Tables(props) {
 
 export default Tables
 
-
-//trying to figure out JSON to hold table info
  
