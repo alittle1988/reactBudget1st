@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.2",
     "clsx": "^1.2.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
@@ -15,6 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://alittle1988.github.io/my-app"
+  "homepage": "https://alittle1988.github.io/reactBudget"
 }
