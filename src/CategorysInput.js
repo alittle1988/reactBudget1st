@@ -22,12 +22,6 @@ function CategorysInput(props) {
                 return <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="What" style={{width:150}}></Form.Control>
                 break;
         }
-
-        /*if(par === "Tips" || "Gas" || "Groceries") {
-            return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="Things" style={{width:150}}></Form.Control>
-        } else {
-            return <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="Things" style={{width:150}}></Form.Control>
-        }*/
     }
     
     

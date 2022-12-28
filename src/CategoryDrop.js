@@ -15,7 +15,7 @@ function CategoryDrop(props) {
 
    function handleButtonClick() {
     if(!things || !amount) {
-        setValidate("Please enter Things and Amount")
+        setValidate("Please enter Things or Amount")
         return;
     }
     onIncomeChange(category, things, amount)
