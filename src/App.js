@@ -18,6 +18,9 @@ const categorys = [
   "Groceries",
 ];
 const years = [];
+for (let i = 2020; i < 2031; i++) {
+  years.push(i);
+}
 const months = [
   "January",
   "Febuary",
@@ -32,77 +35,186 @@ const months = [
   "November",
   "December",
 ];
-for (let i = 2020; i < 2031; i++) {
-  years.push(i);
-}
 
 function App() {
   const [category, setCategory] = useState("");
   const [year, setYear] = useState(new Date().getFullYear());
-  const [month, setMonth] = useState(months[new Date().getMonth()]);
+  const [month, setMonth] = useState(() => {
+    const data = JSON.parse(localStorage.getItem("month"));
+
+    return data || months[new Date().getMonth()];
+  });
+  const [yearData, setYearData] = useState(() => {
+    const data = JSON.parse(localStorage.getItem(year));
+
+    return (
+      data || {
+        january: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        feburary: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        march: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        april: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        may: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        june: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        july: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        august: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        september: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        october: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        november: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+        december: {
+          income: [],
+          tips: [],
+          expenses: [],
+          myself: [],
+          eatingOut: [],
+          misc: [],
+          gas: [],
+          groceries: [],
+        },
+      }
+    );
+  });
   const [income, setIncome] = useState(() => {
-    const data = localStorage.getItem("income");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("income"));
+    return data || [];
   });
   const [tips, setTips] = useState(() => {
-    const data = localStorage.getItem("tips");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("tips"));
+    return data || [];
   });
   const [expenses, setExpenses] = useState(() => {
-    const data = localStorage.getItem("expenses");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("expenses"));
+    return data || [];
   });
   const [myself, setMyself] = useState(() => {
-    const data = localStorage.getItem("myself");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("myself"));
+    return data || [];
   });
   const [eatingOut, setEatingOut] = useState(() => {
-    const data = localStorage.getItem("eatingOut");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("eatingOut"));
+    return data || [];
   });
   const [misc, setMisc] = useState(() => {
-    const data = localStorage.getItem("misc");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("misc"));
+    return data || [];
   });
   const [gas, setGas] = useState(() => {
-    const data = localStorage.getItem("gas");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("gas"));
+    return data || [];
   });
   const [groceries, setGroceries] = useState(() => {
-    const data = localStorage.getItem("groceries");
-    const theData = JSON.parse(data);
-    return theData || [];
+    const data = JSON.parse(localStorage.getItem("groceries"));
+    return data || [];
   });
   const [showTotals, setShowTotals] = useState(false);
-  const [yearData, setYearData] = useState([
-    { january: [{ income: income }, { tips: tips }, expenses] },
-    { feburary: [] },
-    { march: [] },
-    { april: [] },
-    { may: [] },
-    { june: [] },
-    { july: [] },
-    { august: [] },
-    { september: [] },
-    { october: [] },
-    { november: [] },
-    { december: [] },
-  ]);
+
   // updates localStorage
   useEffect(() => {
     localStorage.setItem(year, JSON.stringify(yearData));
+    localStorage.setItem("month", JSON.stringify(month));
     localStorage.setItem("income", JSON.stringify(income));
     localStorage.setItem("tips", JSON.stringify(tips));
     localStorage.setItem("expenses", JSON.stringify(expenses));
     localStorage.setItem("myself", JSON.stringify(myself));
-    localStorage.setItem("eatingOut", JSON.stringify(eatingOut));
+    localStorage.setItem("eating out", JSON.stringify(eatingOut));
     localStorage.setItem("misc", JSON.stringify(misc));
     localStorage.setItem("gas", JSON.stringify(gas));
     localStorage.setItem("groceries", JSON.stringify(groceries));
@@ -116,7 +228,97 @@ function App() {
     gas,
     groceries,
     yearData,
+    month,
   ]);
+  console.log(income);
+  const editYearData = (month, category, name, amount) => {
+    const newYearData = { ...yearData };
+    let id = 0;
+    switch (month) {
+      case "January":
+        switch (category) {
+          case "income":
+            id = newYearData.january.income.length;
+            console.log(id);
+            newYearData.january.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.january.tips.length;
+            newYearData.january.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.january.expenses.length;
+            newYearData.january.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.january.myself.length;
+            newYearData.january.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.january.eatingOut.length;
+            newYearData.january.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.january.misc.length;
+            newYearData.january.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.january.gas.length;
+            newYearData.january.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.january.groceries.length;
+            newYearData.january.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+        break;
+      default:
+        alert("No month selected");
+    }
+    setYearData(newYearData);
+  };
 
   // handle year change
   const handleYearChange = (e) => {
@@ -142,28 +344,52 @@ function App() {
     let id = 0;
     if (category === "income") {
       id = income.length;
-      setIncome([...income, { id: id, name: name, amount: amount }]);
+      setIncome([
+        ...income,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "tips") {
       id = tips.length;
-      setTips([...tips, { id: id, name: name, amount: amount }]);
+      setTips([
+        ...tips,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "expenses") {
       id = expenses.length;
-      setExpenses([...expenses, { id: id, name: name, amount: amount }]);
+      setExpenses([
+        ...expenses,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "myself") {
       id = myself.length;
-      setMyself([...myself, { id: id, name: name, amount: amount }]);
+      setMyself([
+        ...myself,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "eating out") {
       id = eatingOut.length;
-      setEatingOut([...eatingOut, { id: id, name: name, amount: amount }]);
+      setEatingOut([
+        ...eatingOut,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "misc") {
       id = misc.length;
-      setMisc([...misc, { id: id, name: name, amount: amount }]);
+      setMisc([
+        ...misc,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "gas") {
       id = gas.length;
-      setGas([...gas, { id: id, name: name, amount: amount }]);
+      setGas([
+        ...gas,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else if (category === "groceries") {
       id = groceries.length;
-      setGroceries([...groceries, { id: id, name: name, amount: amount }]);
+      setGroceries([
+        ...groceries,
+        { id: id, name: name, amount: amount, date: new Date() },
+      ]);
     } else {
       alert("Fail");
     }
@@ -216,27 +442,34 @@ function App() {
   return (
     <div className="App">
       <Header
+        year={year}
         years={years}
         months={months}
+        month={month}
         onYearChange={handleYearChange}
         onMonthChange={handleMonthChange}
+        onEditYearData={editYearData}
       />
-      <div className="row">
-        <div className="col-md-6">
-          <CategoryDrop
-            onIncomeChange={incomeChange}
-            onCategoryChange={handleCategoryChange}
-            income={income}
-            categorys={categorys}
-            category={category}
-          ></CategoryDrop>
+      <Container>
+        <div className="row">
+          <div className="col-md-6">
+            <CategoryDrop
+              onIncomeChange={incomeChange}
+              onEditYearData={editYearData}
+              onCategoryChange={handleCategoryChange}
+              income={income}
+              categorys={categorys}
+              category={category}
+              month={month}
+            ></CategoryDrop>
+          </div>
+          <div className="col-4" style={{ marginTop: 60 }}>
+            <button className="btn btn-primary" onClick={handleShowTotal}>
+              View Category totals
+            </button>
+          </div>
         </div>
-        <div className="col-4" style={{ marginTop: 60 }}>
-          <button className="btn btn-primary" onClick={handleShowTotal}>
-            View Category totals
-          </button>
-        </div>
-      </div>
+      </Container>
       {showTotals === true ? (
         <Totals
           categorys={categorys}
@@ -335,5 +568,5 @@ function App() {
 
 export default App;
 
-// Left off storing year in localStorage with all months and  list/states included
-// passing down year state to header then lifting state up to update
+// finishing edityear function for the rest of the months!
+// dont forget to try for loop to set data in edit year function 
