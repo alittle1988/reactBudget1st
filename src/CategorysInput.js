@@ -11,16 +11,16 @@ function CategorysInput(props) {
         switch(par) {
             case "Tips":
                 return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
-                break;
+                
             case "Gas":
                 return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
-                break;
+                
             case "Groceries":
                 return <Form.Control id="input-name" onChange={props.onThingsChange} type="date" value={things} placeholder="What" style={{width:150}}></Form.Control>
-                break;
+                
             default:
                 return <Form.Control id="input-name" onChange={props.onThingsChange} type="text" value={things} placeholder="What" style={{width:150}}></Form.Control>
-                break;
+                
         }
     }
     

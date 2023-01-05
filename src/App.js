@@ -23,7 +23,7 @@ for (let i = 2020; i < 2031; i++) {
 }
 const months = [
   "January",
-  "Febuary",
+  "February",
   "March",
   "April",
   "May",
@@ -59,7 +59,7 @@ function App() {
           gas: [],
           groceries: [],
         },
-        feburary: {
+        february: {
           income: [],
           tips: [],
           expenses: [],
@@ -218,6 +218,7 @@ function App() {
     localStorage.setItem("misc", JSON.stringify(misc));
     localStorage.setItem("gas", JSON.stringify(gas));
     localStorage.setItem("groceries", JSON.stringify(groceries));
+    
   }, [
     income,
     tips,
@@ -230,7 +231,7 @@ function App() {
     yearData,
     month,
   ]);
-  console.log(income);
+  console.log(JSON.parse(localStorage.getItem(year)));
   const editYearData = (month, category, name, amount) => {
     const newYearData = { ...yearData };
     let id = 0;
@@ -239,13 +240,7 @@ function App() {
         switch (category) {
           case "income":
             id = newYearData.january.income.length;
-            console.log(id);
-            newYearData.january.income.push({
-              id: id,
-              name: name,
-              amount: amount,
-              date: new Date(),
-            });
+            newYearData.january.income = income;
             break;
           case "tips":
             id = newYearData.january.tips.length;
@@ -314,6 +309,879 @@ function App() {
             alert("No category selected");
         }
         break;
+      case "February":
+        switch (category) {
+          case "income":
+            id = newYearData.february.income.length;
+            console.log(id);
+            newYearData.february.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.february.tips.length;
+            newYearData.february.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.february.expenses.length;
+            newYearData.february.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.february.myself.length;
+            newYearData.february.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.february.eatingOut.length;
+            newYearData.february.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.february.misc.length;
+            newYearData.february.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.february.gas.length;
+            newYearData.february.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.february.groceries.length;
+            newYearData.february.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+        break;
+      case "March":
+        switch (category) {
+          case "income":
+            id = newYearData.march.income.length;
+            console.log(id);
+            newYearData.march.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.march.tips.length;
+            newYearData.march.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.march.expenses.length;
+            newYearData.march.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.march.myself.length;
+            newYearData.march.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.march.eatingOut.length;
+            newYearData.march.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.march.misc.length;
+            newYearData.march.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.march.gas.length;
+            newYearData.march.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.march.groceries.length;
+            newYearData.march.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+        break;
+      case "April":
+        switch (category) {
+          case "income":
+            id = newYearData.april.income.length;
+            console.log(id);
+            newYearData.april.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.april.tips.length;
+            newYearData.april.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.april.expenses.length;
+            newYearData.april.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.april.myself.length;
+            newYearData.april.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.april.eatingOut.length;
+            newYearData.april.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.april.misc.length;
+            newYearData.april.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.april.gas.length;
+            newYearData.april.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.april.groceries.length;
+            newYearData.april.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No Category Selected");
+        }
+        break;
+      case "May":
+        switch (category) {
+          case "income":
+            id = newYearData.may.income.length;
+            console.log(id);
+            newYearData.may.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.may.tips.length;
+            newYearData.may.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.may.expenses.length;
+            newYearData.may.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.may.myself.length;
+            newYearData.may.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.may.eatingOut.length;
+            newYearData.may.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.may.misc.length;
+            newYearData.may.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.may.gas.length;
+            newYearData.may.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.may.groceries.length;
+            newYearData.may.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No Category Selected");
+        }
+        break;
+      case "June":
+        switch (category) {
+          case "income":
+            id = newYearData.june.income.length;
+            console.log(id);
+            newYearData.june.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.june.tips.length;
+            newYearData.june.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.june.expenses.length;
+            newYearData.june.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.june.myself.length;
+            newYearData.june.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.june.eatingOut.length;
+            newYearData.june.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.june.misc.length;
+            newYearData.june.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.june.gas.length;
+            newYearData.june.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.june.groceries.length;
+            newYearData.june.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No Category Selected");
+        }
+        break;
+      case "July":
+        switch (category) {
+          case "income":
+            id = newYearData.july.income.length;
+            console.log(id);
+            newYearData.july.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.july.tips.length;
+            newYearData.july.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.july.expenses.length;
+            newYearData.july.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.july.myself.length;
+            newYearData.july.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.july.eatingOut.length;
+            newYearData.july.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.july.misc.length;
+            newYearData.july.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.july.gas.length;
+            newYearData.july.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.july.groceries.length;
+            newYearData.july.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No Category Selected");
+        }
+        break;
+      case "August":
+        switch (category) {
+          case "income":
+            id = newYearData.august.income.length;
+            console.log(id);
+            newYearData.august.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.august.tips.length;
+            newYearData.august.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.august.expenses.length;
+            newYearData.august.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.august.myself.length;
+            newYearData.august.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.august.eatingOut.length;
+            newYearData.august.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.august.misc.length;
+            newYearData.august.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.august.gas.length;
+            newYearData.august.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.august.groceries.length;
+            newYearData.august.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No Category Selected");
+        }
+        break;
+      case "September":
+        switch (category) {
+          case "income":
+            id = newYearData.september.income.length;
+            console.log(id);
+            newYearData.september.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.september.tips.length;
+            newYearData.september.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.september.expenses.length;
+            newYearData.september.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.september.myself.length;
+            newYearData.september.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.september.eatingOut.length;
+            newYearData.september.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.september.misc.length;
+            newYearData.september.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.september.gas.length;
+            newYearData.september.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.september.groceries.length;
+            newYearData.september.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+
+        break;
+      case "October":
+        switch (category) {
+          case "income":
+            id = newYearData.october.income.length;
+            console.log(id);
+            newYearData.october.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.october.tips.length;
+            newYearData.october.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.october.expenses.length;
+            newYearData.october.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.october.myself.length;
+            newYearData.october.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.october.eatingOut.length;
+            newYearData.october.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.october.misc.length;
+            newYearData.october.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.october.gas.length;
+            newYearData.october.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.october.groceries.length;
+            newYearData.october.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+
+        break;
+      case "November":
+        switch (category) {
+          case "income":
+            id = newYearData.november.income.length;
+            console.log(id);
+            newYearData.november.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.november.tips.length;
+            newYearData.november.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.november.expenses.length;
+            newYearData.november.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.november.myself.length;
+            newYearData.november.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.november.eatingOut.length;
+            newYearData.november.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.november.misc.length;
+            newYearData.november.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.november.gas.length;
+            newYearData.november.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.november.groceries.length;
+            newYearData.november.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+        break;
+      case "December":
+        switch (category) {
+          case "income":
+            id = newYearData.december.income.length;
+            console.log(id);
+            newYearData.december.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "tips":
+            id = newYearData.december.tips.length;
+            newYearData.december.tips.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "expenses":
+            id = newYearData.december.expenses.length;
+            newYearData.december.expenses.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "myself":
+            id = newYearData.december.myself.length;
+            newYearData.december.myself.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "eating out":
+            id = newYearData.december.eatingOut.length;
+            newYearData.december.eatingOut.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "misc":
+            id = newYearData.december.misc.length;
+            newYearData.december.misc.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "gas":
+            id = newYearData.december.gas.length;
+            newYearData.december.gas.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          case "groceries":
+            id = newYearData.december.groceries.length;
+            newYearData.december.groceries.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
+            break;
+          default:
+            alert("No category selected");
+        }
+
+        break;
+
       default:
         alert("No month selected");
     }
@@ -569,4 +1437,4 @@ function App() {
 export default App;
 
 // finishing edityear function for the rest of the months!
-// dont forget to try for loop to set data in edit year function 
+// dont forget to try for loop to set data in edit year function
