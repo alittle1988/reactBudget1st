@@ -218,6 +218,8 @@ function App() {
     localStorage.setItem("misc", JSON.stringify(misc));
     localStorage.setItem("gas", JSON.stringify(gas));
     localStorage.setItem("groceries", JSON.stringify(groceries));
+
+    
     
   }, [
     income,
@@ -231,7 +233,7 @@ function App() {
     yearData,
     month,
   ]);
-  console.log(JSON.parse(localStorage.getItem(year)));
+  
   const editYearData = (month, category, name, amount) => {
     const newYearData = { ...yearData };
     let id = 0;
@@ -240,7 +242,12 @@ function App() {
         switch (category) {
           case "income":
             id = newYearData.january.income.length;
-            newYearData.january.income = income;
+            newYearData.january.income.push({
+              id: id,
+              name: name,
+              amount: amount,
+              date: new Date(),
+            });
             break;
           case "tips":
             id = newYearData.january.tips.length;
@@ -1191,6 +1198,8 @@ function App() {
   // handle year change
   const handleYearChange = (e) => {
     setYear(e.target.value);
+    
+    
   };
   // handles month change
   const handleMonthChange = (e) => {
